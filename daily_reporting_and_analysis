@@ -38,7 +38,9 @@ order by "Countries and territories" asc
 COVID19_analysis-# where ecdc."Countries and territories" is  null;
  
  
- 
+ COVID19_analysis=# Select distinct "GeoId" , "Countries and territories" from tbl_ecdc_datasets where "Countries and territories"   ilike  'Lucia%' or "Countries and territories"  ilike '%vincen%' or "Countries and territories"  ilike '%kitt%' or "Countries and territories"   ilike  'puert%'  or "Countries and territories"   ilike  '%virgi%'       or "Countries and territories"   ilike  '%Baha%'   ;
+ GeoId |    Countries and territories
+--
  
  
  
