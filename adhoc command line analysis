@@ -1,0 +1,79 @@
+COVID19_analysis=# select * from tbl_caribbean_countries cc left join tbl_ecdc_datasets as ecdc on cc.caribbean_country = ecdc."Countries and territories"
+COVID19_analysis-# where ecdc."Countries and territories" is not null;
+ logid | caribbean_country | country_of_ownership | logid |  DateRep   | Day | Month | Year | Cases | Deaths | Countries and territories | GeoId
+-------+-------------------+----------------------+-------+------------+-----+-------+------+-------+--------+---------------------------+-------
+     2 | Barbados          | Independent          |  2204 | 2020-03-18 |  18 |     3 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2203 | 2020-03-19 |  19 |     3 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2202 | 2020-03-20 |  20 |     3 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2201 | 2020-03-21 |  21 |     3 | 2020 |     4 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2200 | 2020-03-22 |  22 |     3 | 2020 |     8 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2199 | 2020-03-23 |  23 |     3 | 2020 |     3 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2198 | 2020-03-24 |  24 |     3 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2197 | 2020-03-25 |  25 |     3 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2196 | 2020-03-26 |  26 |     3 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2195 | 2020-03-27 |  27 |     3 | 2020 |     6 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2194 | 2020-03-28 |  28 |     3 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2193 | 2020-03-29 |  29 |     3 | 2020 |     2 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2192 | 2020-03-30 |  30 |     3 | 2020 |     7 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2191 | 2020-03-31 |  31 |     3 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2190 | 2020-04-01 |   1 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2189 | 2020-04-02 |   2 |     4 | 2020 |    11 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2188 | 2020-04-03 |   3 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2187 | 2020-04-04 |   4 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2186 | 2020-04-05 |   5 |     4 | 2020 |     6 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2185 | 2020-04-06 |   6 |     4 | 2020 |     5 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2184 | 2020-04-07 |   7 |     4 | 2020 |     4 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2183 | 2020-04-08 |   8 |     4 | 2020 |     3 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2182 | 2020-04-09 |   9 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2181 | 2020-04-10 |  10 |     4 | 2020 |     3 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2180 | 2020-04-11 |  11 |     4 | 2020 |     1 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2179 | 2020-04-12 |  12 |     4 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2178 | 2020-04-13 |  13 |     4 | 2020 |     3 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2177 | 2020-04-14 |  14 |     4 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2176 | 2020-04-15 |  15 |     4 | 2020 |     1 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2175 | 2020-04-16 |  16 |     4 | 2020 |     2 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2174 | 2020-04-17 |  17 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2173 | 2020-04-18 |  18 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2172 | 2020-04-19 |  19 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2171 | 2020-04-20 |  20 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2170 | 2020-04-21 |  21 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2169 | 2020-04-22 |  22 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2168 | 2020-04-23 |  23 |     4 | 2020 |     1 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2167 | 2020-04-24 |  24 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2166 | 2020-04-25 |  25 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2165 | 2020-04-26 |  26 |     4 | 2020 |     3 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2164 | 2020-04-27 |  27 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2163 | 2020-04-28 |  28 |     4 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2162 | 2020-04-29 |  29 |     4 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2161 | 2020-04-30 |  30 |     4 | 2020 |     0 |      1 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2160 | 2020-05-01 |   1 |     5 | 2020 |     1 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2159 | 2020-05-02 |   2 |     5 | 2020 |     0 |      0 | Barbados                  | BB
+     2 | Barbados          | Independent          |  2158 | 2020-05-03 |   3 |     5 | 2020 |     0 |      0 | Barbados                  | BB
+COVID19_analysis=# select * from tbl_caribbean_countries cc left join tbl_ecdc_datasets as ecdc on cc.caribbean_country = ecdc."Countries and territories"
+COVID19_analysis-# where ecdc."Countries and territories" is  null;
+ logid |        caribbean_country         | country_of_ownership | logid | DateRep | Day | Month | Year | Cases | Deaths | Countries and territories | GeoId
+-------+----------------------------------+----------------------+-------+---------+-----+-------+------+-------+--------+---------------------------+-------
+     1 | Antigua and Barbuda              | Independent          |       |         |     |       |      |       |        |                           |
+     6 | Dominican Republic               | Independent          |       |         |     |       |      |       |        |                           |
+     7 | Guadeloupe                       | France               |       |         |     |       |      |       |        |                           |
+     8 | Martinique                       | France               |       |         |     |       |      |       |        |                           |
+     9 | Saint Barth├⌐lemy                | France               |       |         |     |       |      |       |        |                           |
+    10 | Saint Martin (France)            | France               |       |         |     |       |      |       |        |                           |
+    17 | Caribbean Netherlands            | Netherlands          |       |         |     |       |      |       |        |                           |
+    18 | Sint Maarten                     | Netherlands          |       |         |     |       |      |       |        |                           |
+    20 | Saint Kitts and Nevis            | Independent          |       |         |     |       |      |       |        |                           |
+    21 | Saint Lucia                      | Independent          |       |         |     |       |      |       |        |                           |
+    22 | Saint Vincent and the Grenadines | Independent          |       |         |     |       |      |       |        |                           |
+    23 | Trinidad and Tobago              | Independent          |       |         |     |       |      |       |        |                           |
+    25 | British Virgin Islands           | United Kingdom       |       |         |     |       |      |       |        |                           |
+    26 | Cayman Islands                   | United Kingdom       |       |         |     |       |      |       |        |                           |
+    28 | Puerto Rico                      | United States        |       |         |     |       |      |       |        |                           |
+    29 | United States Virgin Islands     | United States        |       |         |     |       |      |       |        |                           |
+    30 | The Bahamas                      | Lucayan Archipelago  |       |         |     |       |      |       |        |                           |
+    31 | Turks and Caicos Islands         | Lucayan Archipelago  |       |         |     |       |      |       |        |                           |
+(18 rows)
+
+
+COVID19_analysis=#
+
+
