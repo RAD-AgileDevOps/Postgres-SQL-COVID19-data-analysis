@@ -1,0 +1,45 @@
+
+/* 
+COVID19_analysis=# \d tbl_ecdc_datasets;
+                                              Table "public.tbl_ecdc_datasets"
+          Column           |         Type          | Collation | Nullable |                     Default
+---------------------------+-----------------------+-----------+----------+--------------------------------------------------
+ logid                     | integer               |           | not null | nextval('tbl_ecdc_datasets_logid_seq'::regclass)
+ DateRep                   | date                  |           |          |
+ Day                       | integer               |           |          |
+ Month                     | integer               |           |          |
+ Year                      | integer               |           |          |
+ Cases                     | integer               |           |          |
+ Deaths                    | integer               |           |          |
+ Countries and territories | text                  |           |          |
+ GeoId                     | character varying(50) |           |          |
+Indexes:
+    "tbl_ecdc_datasets_pkey" PRIMARY KEY, btree (logid)
+Tablespace: "rdf"
+ */
+
+
+select "Countries and territories" ,  count("logid") , sum("Cases") as "Cases - Total" , sum("Deaths") as "Death Total"
+from tbl_ecdc_datasets
+
+group by rollup("Countries and territories")
+order by "Countries and territories" asc
+ ;
+ 
+ 
+ -- 2020-06-24
+ -- This is for ascertain carribean countries via lookup table
+ select * from  tbl_ecdc_datasets  where "Countries and territories" in (select "caribbean_country" from tbl_caribbean_countries);
+ 
+ 
+ -- updating the lookup table to match against the COVID Dataset
+ 
+ COVID19_analysis=# select * from tbl_caribbean_countries cc left join tbl_ecdc_datasets as ecdc on cc.caribbean_country = ecdc."Countries and territories"
+COVID19_analysis-# where ecdc."Countries and territories" is  null;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
