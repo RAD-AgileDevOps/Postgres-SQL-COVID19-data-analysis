@@ -77,3 +77,85 @@ COVID19_analysis-# where ecdc."Countries and territories" is  null;
 COVID19_analysis=#
 
 
+10:43 am
+
+Created a "virtual table - see SELECT clause afteFROM Keyword.The rationale was to ultimately find the GeoID of the Caribbean Islands so that Iam able to populate the lookup table, for easier
+referencing, as the countries names may be different; the GeoId are ore   consistent
+
+COVID19_analysis-#  (select * from tbl_caribbean_countries cc left join tbl_ecdc_datasets as ecdc on cc.caribbean_country = ecdc."Countries and territories"
+COVID19_analysis(#  where ecdc."Countries and territories" is not  null ) as t;
+ GeoId | Countries and territories
+-------+---------------------------
+ MS    | Montserrat
+ CO    | Colombia
+ NI    | Nicaragua
+ JM    | Jamaica
+ CW    | Cura├ºao
+ DM    | Dominica
+ HN    | Honduras
+ AW    | Aruba
+ BB    | Barbados
+ AI    | Anguilla
+ CU    | Cuba
+ HT    | Haiti
+ GD    | Grenada
+ 
+ 
+ 
+ 
+ -- Data Cleansing to ensure lookup table has correct GeoId's:
+ 
+ COVID19_analysis=#
+COVID19_analysis=# select distinct "GeoId" from tbl_ecdc_datasets
+COVID19_analysis-#
+COVID19_analysis-# where   "Countries and territories"   ilike ('Domin%') or "Countries and territories"   ilike ('Antigua%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Guadeloupe%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Martinique%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Saint Bart%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Saint Martin%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Caribbean Netherlands%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Sint Maarten%')
+COVID19_analysis-# or
+COVID19_analysis-# "Countries and territories"   ilike ('Saint Kitts%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Saint Lucia%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Saint Vincent%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Trinidad%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('British Virgin%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Cayman%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Puerto Rico  %')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('United States Virgin Islands%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('The Bahamas%')
+COVID19_analysis-# OR
+COVID19_analysis-# "Countries and territories"   ilike ('Turks%')
+COVID19_analysis-#  ;
+ 
+-- Result set(in CMD): 
+ 
+ 
+ GeoId
+-------
+ TT
+ AG
+ DO
+ DM
+ TC
+ KY
+(6 rows)
+
+
+
+
