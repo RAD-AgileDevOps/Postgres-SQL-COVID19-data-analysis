@@ -29,3 +29,7 @@ where  "GeoId" in (select "geoid_caribn" from tbl_caribbean_countries)) as R
 group by rollup(r."Countries and territories")
 order by r."Countries and territories"  
 );
+
+
+
+select * from carribean_covid_report ;

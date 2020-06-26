@@ -235,13 +235,14 @@ OR
 OR
   
 
-"Countries and territories"   ilike ('The Bahamas%')
+
+
 
 
 OR
   
 
-"Countries and territories"   ilike ('Turks%')
+
 
 
  ;
@@ -293,4 +294,54 @@ Turks
  
  
  
- 
+                                                                ^
+COVID19_analysis=# Select distinct "GeoId" , "Countries and territories" from tbl_ecdc_datasets where "Countries and territories"   ilike  'Lucia%' or "Countries and territories"  ilike '%vincen%' or "Countries and territories"  ilike '%kitt%' or "Countries and territories"   ilike  'puert%'  or "Countries and territories"   ilike  '%virgi%'       or "Countries and territories"   ilike  '%Baha%'   ;
+ GeoId |    Countries and territories
+-------+----------------------------------
+ VG    | British_Virgin_Islands
+ KN    | Saint_Kitts_and_Nevis
+ PR    | Puerto_Rico
+ VI    | United_States_Virgin_Islands
+ BS    | Bahamas
+ VC    | Saint_Vincent_and_the_Grenadines
+(6 rows)
+
+
+
+update tbl_caribbean_countries
+set geoid_caribn = 'VG'
+where caribbean_country ilike 'British%';
+
+
+
+
+update tbl_caribbean_countries
+set geoid_caribn = 'KN'
+where caribbean_country ilike '%Kitts%';
+
+
+
+update tbl_caribbean_countries
+set geoid_caribn = 'PR'
+where caribbean_country ilike '%Puerto%';
+
+
+
+
+update tbl_caribbean_countries
+set geoid_caribn = 'VI'
+where caribbean_country ilike '%United States Virgin%';
+
+update tbl_caribbean_countries
+set geoid_caribn = 'BS'
+where caribbean_country ilike '%Bahamas%';
+
+
+update tbl_caribbean_countries
+set geoid_caribn = 'VC'
+where caribbean_country ilike '%Vincent%';
+
+
+update tbl_caribbean_countries
+set geoid_caribn = 'LC'
+where caribbean_country ~~* '%lucia%';
