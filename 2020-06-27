@@ -1,0 +1,36 @@
+
+
+C:\Users\radfi>psql -U postgres -d COVID19_analysis -f "C:\Databases\PostgreSQL\COVID19_DATA_ANALYSIS\DATA_ENTRY_TOOLS\COVID_Geographic_distribution.sql"
+Password for user postgres:
+DO
+DELETE 0
+COPY 26144
+CREATE VIEW
+    Countries and territories     | num_count | tot_deaths
+----------------------------------+-----------+------------
+ Anguilla                         |        93 |          0
+ Antigua_and_Barbuda              |       100 |          3
+ Aruba                            |        97 |          3
+ Bahamas                          |       102 |         11
+ Barbados                         |       102 |          7
+ British_Virgin_Islands           |        93 |          1
+ Cayman_Islands                   |       100 |          1
+ Colombia                         |       109 |       2811
+ Cuba                             |       105 |         85
+ Dominica                         |        97 |          0
+ Dominican_Republic               |       171 |        712
+ Grenada                          |        97 |          0
+ Haiti                            |       100 |         98
+ Honduras                         |       106 |        471
+ Jamaica                          |       107 |         10
+ Montserrat                       |        98 |          1
+ Nicaragua                        |       101 |         74
+ Puerto_Rico                      |        92 |        151
+ Saint_Kitts_and_Nevis            |        94 |          0
+ Saint_Lucia                      |       105 |          0
+ Saint_Vincent_and_the_Grenadines |        96 |          0
+ Trinidad_and_Tobago              |       107 |          8
+ Turks_and_Caicos_islands         |        95 |          1
+ United_States_Virgin_Islands     |        95 |          6
+                                  |      2462 |       4454
+(25 rows)
