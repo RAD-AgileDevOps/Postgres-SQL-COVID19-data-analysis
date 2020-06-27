@@ -34,3 +34,22 @@ CREATE VIEW
  United_States_Virgin_Islands     |        95 |          6
                                   |      2462 |       4454
 (25 rows)
+
+I ran a "TABLE" command to test for updates
+
+
+COVID19_analysis=# TABLE "tbl_ecdc_datasets" limit (8);
+ logid |  DateRep   | Day | Month | Year | Cases | Deaths | Countries and territories | countryterritorycode | popdata2019 | continentexp | GeoId
+-------+------------+-----+-------+------+-------+--------+---------------------------+----------------------+-------------+--------------+-------
+     1 | 2020-06-27 |  27 |     6 | 2020 |   276 |      8 | Afghanistan               | AFG                  |    38041757 | Asia         | AF <<--- SUCCESS!
+     2 | 2020-06-26 |  26 |     6 | 2020 |   460 |     36 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+     3 | 2020-06-25 |  25 |     6 | 2020 |   234 |     21 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+     4 | 2020-06-24 |  24 |     6 | 2020 |   338 |     20 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+     5 | 2020-06-23 |  23 |     6 | 2020 |   310 |     17 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+     6 | 2020-06-22 |  22 |     6 | 2020 |   409 |     12 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+     7 | 2020-06-21 |  21 |     6 | 2020 |   546 |     21 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+     8 | 2020-06-20 |  20 |     6 | 2020 |   346 |      2 | Afghanistan               | AFG                  |    38041757 | Asia         | AF
+(8 rows)
+
+
+the above test extracted the first 8 records from the COVID database logid 1 - showd  Afghanistan   at 276 cases and 8 Deaths for 2020-06-27
