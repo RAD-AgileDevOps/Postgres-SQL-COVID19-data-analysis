@@ -1,0 +1,122 @@
+-- 2020-06-25
+-- Author: Roger De Four
+-- Included a few more fields to the main dat base table - as the ECDC datsets had added more
+
+-- SQL script to modify table:
+
+alter table tbl_ecdc_datasets
+add column countryterritoryCode varchar(10),
+add column popData2019 integer,
+add column continentExp varchar(12);
+
+
+-- Needed to remove the field 'GeoId' from the base table.A  child object(a view) was dependent upon it so CASCADE was added to the DROP statement.
+
+alter table tbl_ecdc_datasets
+drop column "GeoId" CASCADE;
+
+-- NOTICE:  drop cascades to view carribean_covid_report
+-- ALTER TABLE
+
+/*
+COVID19_analysis=# \d tbl_ecdc_datasets;
+                                              Table "public.tbl_ecdc_datasets"
+          Column           |         Type          | Collation | Nullable |                     Default
+---------------------------+-----------------------+-----------+----------+--------------------------------------------------
+ logid                     | integer               |           | not null | nextval('tbl_ecdc_datasets_logid_seq'::regclass)
+ DateRep                   | date                  |           |          |
+ Day                       | integer               |           |          |
+ Month                     | integer               |           |          |
+ Year                      | integer               |           |          |
+ Cases                     | integer               |           |          |
+ Deaths                    | integer               |           |          |
+ Countries and territories | text                  |           |          |
+ countryterritorycode      | character varying(10) |           |          |
+ popdata2019               | integer               |           |          |
+ continentexp              | character varying(12) |           |          |
+Indexes:
+    "tbl_ecdc_datasets_pkey" PRIMARY KEY, btree (logid)
+Tablespace: "rdf"
+*/
+
+
+
+-- After re-addition of "GeoId" column:
+
+/*
+COVID19_analysis=# alter table tbl_ecdc_datasets
+COVID19_analysis-# add column "GeoId" varchar(50);
+
+
+
+
+
+
+COVID19_analysis=# COVID19_analysis=# \d tbl_ecdc_datasets;
+                                              Table "public.tbl_ecdc_datasets"
+          Column           |         Type          | Collation | Nullable |                     Default
+---------------------------+-----------------------+-----------+----------+--------------------------------------------------
+ logid                     | integer               |           | not null | nextval('tbl_ecdc_datasets_logid_seq'::regclass)
+ DateRep                   | date                  |           |          |
+ Day                       | integer               |           |          |
+ Month                     | integer               |           |          |
+ Year                      | integer               |           |          |
+ Cases                     | integer               |           |          |
+ Deaths                    | integer               |           |          |
+ Countries and territories | text                  |           |          |
+ countryterritorycode      | character varying(10) |           |          |
+ popdata2019               | integer               |           |          |
+ continentexp              | character varying(12) |           |          |
+ GeoId                     | character varying(50) |           |          |
+Indexes:
+    "tbl_ecdc_datasets_pkey" PRIMARY KEY, btree (logid)
+Tablespace: "rdf"
+
+*/
+
+COVID19_analysis=# select * from carribean_covid_report;
+  
+  
+  
+  Countries and territories     | num_count | tot_deaths
+----------------------------------+-----------+------------
+ Anguilla                         |        91 |          0
+ Antigua_and_Barbuda              |        98 |          3
+ Aruba                            |        95 |          3
+ Bahamas                          |       100 |         11
+ Barbados                         |       100 |          7
+ British_Virgin_Islands           |        91 |          1
+ Cayman_Islands                   |        98 |          1
+ Colombia                         |       107 |       2491
+ Cuba                             |       103 |         85
+ Dominica                         |        95 |          0
+ Dominican_Republic               |       169 |        691
+ Grenada                          |        95 |          0
+ Haiti                            |        98 |         92
+ Honduras                         |       104 |        417
+ Jamaica                          |       105 |         10
+ Montserrat                       |        96 |          1
+ Nicaragua                        |        99 |         74
+ Puerto_Rico                      |        90 |        149
+ Saint_Kitts_and_Nevis            |        92 |          0
+ Saint_Lucia                      |       103 |          0
+ Saint_Vincent_and_the_Grenadines |        94 |          0
+ Trinidad_and_Tobago              |       105 |          8
+ Turks_and_Caicos_islands         |        93 |          1
+ United_States_Virgin_Islands     |        93 |          6
+                                  |      2414 |       4051
+(25 rows)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
